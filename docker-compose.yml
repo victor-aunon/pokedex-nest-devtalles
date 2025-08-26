@@ -1,0 +1,12 @@
+name: pokedex-nest-mongo
+
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_DATABASE: nest-pokedex
+    volumes:
+      - ./mongo:/data/db
