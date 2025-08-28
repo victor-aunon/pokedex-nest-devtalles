@@ -2,6 +2,7 @@ name: pokedex-nest-mongo
 
 services:
   db:
+    container_name: mongo
     image: mongo:5
     restart: always
     ports:
