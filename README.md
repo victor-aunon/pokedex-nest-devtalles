@@ -23,7 +23,16 @@ npm i -g @nestjs/cli
 docker compose up -d
 ```
 
-5. Reconstruir la base de datos a partir de la semilla
+5. Clonar el archivo `.env.example` y renombrarlo a `.env`
+6. Definir las variables de entorno definidas en `.env`
+
+7. Levantar la api
+
+```
+yarn start:dev
+```
+
+8. Reconstruir la base de datos a partir de la semilla
 
 ```
 http://localhost:3000/api/v2/seed
