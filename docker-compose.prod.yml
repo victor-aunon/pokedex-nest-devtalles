@@ -1,0 +1,25 @@
+name: pokedex-nest-mongo-prod
+
+services:
+  pokedex-app:
+    container_name: pokedex-app
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pokedex-app
+    ports:
+      - 3000:3000
+    env_file:
+      - .env.prod
+  db:
+    container_name: mongo_prod
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_DATABASE: nest-pokedex
+    volumes:
+      - ./mongo:/data/db
